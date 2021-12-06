@@ -21,7 +21,7 @@
                 <form action="{{ route('masuk') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="">Nomor Induk</label>
+                        <label for="">ID</label>
                         <input type="number" name="no_induk" class="form-control" id="">
                     </div>
                     <div class="form-group">

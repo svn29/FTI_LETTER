@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tugas Pribadi</title>
+	<title>Tugas Kelompok</title>
 	<style type="text/css">
 		table {
 			border-style: double;
@@ -31,7 +31,7 @@
 				<center>
                     <font size="3"><b>UNIVERSITAS KRISTEN DUTA WACANA</b></font><br>
                     <font size="5"><b>FAKULTAS TEKNOLOGI INFORMASI</b></font><br>
-					<font size="4">SUART TUGAS PRIBADI 2021</font><br>
+					<font size="4">SUART TUGAS KELOMPOK 2021</font><br>
                     <font size="3">NO SURAT : {{ $item->no_surat }}</font><br>
 					<font size="2"><i>Jln roma No. 02 Kode Pos : 68173 Telp./Fax (0331)758005 Yogyakarta</i></font>
 				</center>
@@ -65,6 +65,24 @@
 		       </td>
 		    </tr>
 		</table>
+        <table style="width: 100%" border="3">
+            <thead>
+                <tr>
+                    <th scope="col">NIM</th>
+                    <th scope="col">Nama</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($item->penerimas as $p)
+                    <tr>
+                        <td>{{ $p->no_induk }}</td>
+                        <td>
+                            {{$p->nama}}
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
         <table width="625">
 			<tr>
 		       <td>

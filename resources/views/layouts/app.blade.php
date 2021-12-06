@@ -74,22 +74,32 @@ Coded by www.creative-tim.com
               <p>Dashboard</p>
             </a>
           </li>
+          @if (Auth::user()->role == 'admin')
           <li>
             <a href="{{ route('manage.index') }}">
               <i class="nc-icon nc-diamond"></i>
               <p>Manage User</p>
             </a>
           </li>
+          @endif
+          @if (Auth::user()->role == 'dosen')
           <li>
             <a href="{{ route('tanda.index') }}">
               <i class="nc-icon nc-pin-3"></i>
               <p>Signature</p>
             </a>
           </li>
+          @endif
           <li>
             <a href="{{ route('tugas_pribadi.index') }}">
               <i class="nc-icon nc-pin-3"></i>
               <p>Surat Tugas Pribadi</p>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('tugas_kelompok.index') }}">
+              <i class="nc-icon nc-pin-3"></i>
+              <p>Surat Tugas Kelompok</p>
             </a>
           </li>
         </ul>
@@ -136,7 +146,7 @@ Coded by www.creative-tim.com
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="#">Action</a>
                   <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
                 </div>
               </li>
             </ul>
