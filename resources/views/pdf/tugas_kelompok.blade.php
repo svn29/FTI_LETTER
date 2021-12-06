@@ -102,7 +102,7 @@
 			</tr> --}}
 			<tr>
 				<td>Tempat</td>
-				<td width="525">: <b> {{ $item->lokasi_pelaksanaan }} </b></td>
+				<td width="525">: <b> {{ $item->tempat }} </b></td>
 			</tr>
 		</table>
 		<br>

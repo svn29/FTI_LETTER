@@ -14,20 +14,13 @@
         </div>
         <div class="card-body">
             <form action="{{ route('tanda.store') }}" method="POST">
+                <input type="hidden" name="dosen_id" value="{{ Auth::user()->id }}">
                 @csrf
-                <div class="form-group">
+                @error('dosen_id')
                     <div class="form-group">
-                        <label for="">Dosen</label>
-                        <select name="user_id" id="select2" class="form-control select2">
-                            <option value="">Pilih Dosen...</option>
-                            @forelse ($users as $item)
-                                <option value="{{ $item->id }}">{{ $item->nama }}</option>
-                            @empty
-                                
-                            @endforelse
-                        </select>
+                        <div class="alert alert-danger">{{ $message }}</div>
                     </div>
-                </div>
+                @enderror
                 <div class="form-group">
                     <label for="">Tanda Tangan</label>
                     <div id="sig"></div>
