@@ -19,7 +19,7 @@ class SignController extends Controller
      */
     public function index()
     {
-        $signs = Sign::where('role', 'dosen')->get();
+        $signs = Sign::all();
 
         return view('tanda.index', compact('signs'));
     }
