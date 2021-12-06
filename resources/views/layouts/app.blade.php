@@ -18,10 +18,10 @@ Coded by www.creative-tim.com
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="email.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    e-Surat
+    FTILetter
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -60,7 +60,8 @@ Coded by www.creative-tim.com
           <!-- <p>CT</p> -->
         </a>
         <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          e-Surat
+            <img src="email.png" style="width:20px; height:20px;">
+          FTILetter
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->
@@ -70,36 +71,36 @@ Coded by www.creative-tim.com
         <ul class="nav">
           <li class="active ">
             <a href="/">
-              <i class="nc-icon nc-bank"></i>
+              <i class="nc-icon nc-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
           </li>
           @if (Auth::user()->role == 'admin')
           <li>
             <a href="{{ route('manage.index') }}">
-              <i class="nc-icon nc-diamond"></i>
-              <p>Manage User</p>
+              <i class="nc-icon nc-circle-10"></i>
+              <p>Manajemen User</p>
             </a>
           </li>
           @endif
           @if (Auth::user()->role == 'dosen')
           <li>
             <a href="{{ route('tanda.index') }}">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>Signature</p>
+              <i class="nc-icon nc-email-85"></i>
+              <p>Tanda Tangan</p>
             </a>
           </li>
           @endif
           @if (Auth::user()->role != 'dosen')
           <li>
             <a href="{{ route('tugas_pribadi.index') }}">
-              <i class="nc-icon nc-pin-3"></i>
+              <i class="nc-icon nc-email-85"></i>
               <p>Surat Tugas Pribadi</p>
             </a>
           </li>
           <li>
             <a href="{{ route('tugas_kelompok.index') }}">
-              <i class="nc-icon nc-pin-3"></i>
+              <i class="nc-icon nc-email-85"></i>
               <p>Surat Tugas Kelompok</p>
             </a>
           </li>
@@ -107,13 +108,13 @@ Coded by www.creative-tim.com
           @if (Auth::user()->role != 'mahasiswa')
           <li>
             <a href="{{ route('tugas_dosen.index') }}">
-              <i class="nc-icon nc-pin-3"></i>
+              <i class="nc-icon nc-email-85"></i>
               <p>Surat Tugas Dosen</p>
             </a>
           </li>
           <li>
             <a href="{{ route('berita_acara.index') }}">
-              <i class="nc-icon nc-pin-3"></i>
+              <i class="nc-icon nc-email-85"></i>
               <p>Berita Acara</p>
             </a>
           </li>
@@ -133,7 +134,9 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Title</a>
+            <img src="ukdw.png" style="width:90px; height:50px">
+            <a class="navbar-brand" href="javascript:;">Sistem Surat Menyurat FTI UKDW</a>
+            <img src="logo fti.png" style="width:90px; height:50px">
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -143,10 +146,10 @@ Coded by www.creative-tim.com
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <form>
               <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
+                <!--<input type="text" value="" class="form-control" placeholder="Search...">-->
                 <div class="input-group-append">
                   <div class="input-group-text">
-                    <i class="nc-icon nc-zoom-split"></i>
+                    <!--<i class="nc-icon nc-zoom-split"></i>-->
                   </div>
                 </div>
               </div>
