@@ -90,6 +90,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           @endif
+          @if (Auth::user()->role != 'dosen')
           <li>
             <a href="{{ route('tugas_pribadi.index') }}">
               <i class="nc-icon nc-pin-3"></i>
@@ -102,12 +103,21 @@ Coded by www.creative-tim.com
               <p>Surat Tugas Kelompok</p>
             </a>
           </li>
+          @endif
+          @if (Auth::user()->role != 'mahasiswa')
           <li>
             <a href="{{ route('tugas_dosen.index') }}">
               <i class="nc-icon nc-pin-3"></i>
               <p>Surat Tugas Dosen</p>
             </a>
           </li>
+          <li>
+            <a href="{{ route('berita_acara.index') }}">
+              <i class="nc-icon nc-pin-3"></i>
+              <p>Berita Acara</p>
+            </a>
+          </li>
+          @endif
         </ul>
       </div>
     </div>

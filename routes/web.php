@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BeritaAcaraController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\LoginController;
@@ -44,4 +45,11 @@ Route::resource('tugas_dosen', TugasDosenController::class);
 Route::get('/validasi/tugas_dosen/{id}', [TugasDosenController::class, 'showValidasi'])->name('tugas_dosen.validasi');
 Route::put('/validasi/tugas_dosen/{id}', [TugasDosenController::class, 'takenValidasi'])->name('tugas_dosen.validate');
 Route::get('/unduh/tugas_dosen/{id}', [TugasDosenController::class, 'download'])->name('tugas_dosen.download');
+
+// berita acara
+
+Route::resource('berita_acara', BeritaAcaraController::class);
+Route::get('/validasi/berita_acara/{id}', [BeritaAcaraController::class, 'showValidasi'])->name('berita_acara.validasi');
+Route::put('/validasi/berita_acara/{id}', [BeritaAcaraController::class, 'takenValidasi'])->name('berita_acara.validate');
+Route::get('/unduh/berita_acara/{id}', [BeritaAcaraController::class, 'download'])->name('berita_acara.download');
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
