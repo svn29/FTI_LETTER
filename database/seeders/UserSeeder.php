@@ -16,27 +16,27 @@ class UserSeeder extends Seeder
     {
         $users = [
             [
-                'username' => 'katonwijana',
-                'nama' => 'Katon Wijana',
-                'no_induk' => 119022,
+                'username' => 'argowibowo',
+                'nama' => 'Argo Wibowo',
+                'no_induk' => 789,
                 'no_hp' => '081315927777',
                 'email' => 'dosen@gmail.com',
                 'password' => bcrypt(123456),
                 'role' => 'dosen'
             ],
             [
-                'username' => 'anto123',
-                'nama' => 'Aldi Widodo',
-                'no_induk' => 119022,
+                'username' => 'jeanpurba',
+                'nama' => 'Jeanette Purba',
+                'no_induk' => 72190352,
                 'no_hp' => '08954121111',
                 'email' => 'mahasiswa@gmail.com',
                 'password' => bcrypt(123456),
                 'role' => 'mahasiswa'
             ],
             [
-                'username' => 'andi123',
-                'nama' => 'Aldi Widodo',
-                'no_induk' => 119022,
+                'username' => 'admin',
+                'nama' => 'PPA SIUKDW',
+                'no_induk' => 123,
                 'no_hp' => '08954121111',
                 'email' => 'admin@gmail.com',
                 'password' => bcrypt(123456),
