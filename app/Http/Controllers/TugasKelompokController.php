@@ -138,7 +138,7 @@ class TugasKelompokController extends Controller
     {
         $surat = Surat::find($id);
         $signs = Sign::all();
-        return view('validasi', compact('surat', 'signs'));
+        return view('tugas_kelompok.validasi', compact('surat', 'signs'));
     }
 
     public function takenValidasi(Request $request,$id)
