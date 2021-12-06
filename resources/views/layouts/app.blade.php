@@ -102,6 +102,12 @@ Coded by www.creative-tim.com
               <p>Surat Tugas Kelompok</p>
             </a>
           </li>
+          <li>
+            <a href="{{ route('tugas_dosen.index') }}">
+              <i class="nc-icon nc-pin-3"></i>
+              <p>Surat Tugas Dosen</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
