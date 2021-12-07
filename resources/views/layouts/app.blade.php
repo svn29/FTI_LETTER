@@ -18,7 +18,7 @@ Coded by www.creative-tim.com
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="email.png">
+  <link rel="icon" type="image/png" href="{{ asset('email.png') }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     FTILetter
@@ -60,7 +60,7 @@ Coded by www.creative-tim.com
           <!-- <p>CT</p> -->
         </a>
         <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-            <img src="email.png" style="width:20px; height:20px;">
+            <img src="{{ asset('email.png') }}" style="width:20px; height:20px;">
           FTILetter
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
@@ -134,9 +134,9 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <img src="ukdw.png" style="width:90px; height:50px">
+            <img src="{{ asset('ukdw.png') }}" style="width:90px; height:60px">
             <a class="navbar-brand" href="javascript:;">Sistem Surat Menyurat FTI UKDW</a>
-            <img src="logo fti.png" style="width:90px; height:50px">
+            <img src="{{ asset('logo fti.png') }}" style="width:90px; height:50px">
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>

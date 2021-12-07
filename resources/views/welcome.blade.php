@@ -11,6 +11,7 @@
                 <i class="nc-icon nc-email-85 text-warning"></i>
               </div>
             </div>
+
             <div class="col-7 col-md-8">
               <div class="numbers">
                 <p class="card-category">Tugas Pribadi</p>
