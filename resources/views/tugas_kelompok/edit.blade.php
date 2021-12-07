@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Mahasiswa</label>
-                    <select name="penerimas[]" id="" class="form-control" multiple>
+                    <select name="penerimas[]" id="" class="form-control select2" multiple>
                         @foreach ($users as $item)
                             <option value="{{ $item->id }}" @foreach ($surat->penerimas as $s)
                                 {{ $s->id == $item->id ? 'selected' : '' }}

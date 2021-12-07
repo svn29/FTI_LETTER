@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Sign;
 use App\Models\Surat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use PDF;
 
 class BeritaAcaraController extends Controller
@@ -16,7 +17,11 @@ class BeritaAcaraController extends Controller
      */
     public function index()
     {
-        $surats = Surat::where('jenis_surat', 'berita acara')->get();
+        if (Auth::user()->role == 'dosen') {
+            $surats = Surat::where('jenis_surat', 'berita acara')->where('pemohon_id', Auth::user()->id)->get();
+        } else {
+            $surats = Surat::where('jenis_surat', 'berita acara')->get();
+        }
 
         return view('berita_acara.index', compact('surats'));
     }

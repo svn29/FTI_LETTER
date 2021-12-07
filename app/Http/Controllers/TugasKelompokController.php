@@ -6,6 +6,7 @@ use App\Models\Sign;
 use App\Models\Surat;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use PDF;
 
 class TugasKelompokController extends Controller
@@ -21,7 +22,11 @@ class TugasKelompokController extends Controller
      */
     public function index()
     {
-        $surats = Surat::where('jenis_surat', 'tugas kelompok')->get();
+        if (Auth::user()->role == 'mahasiswa') {
+            $surats = Surat::where('jenis_surat', 'tugas kelompok')->where('pemohon_id', Auth::user()->id)->get();
+        } else {
+            $surats = Surat::where('jenis_surat', 'tugas kelompok')->get();
+        }
 
         return view('tugas_kelompok.index', compact('surats'));
     }
