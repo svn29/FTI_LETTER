@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\BeritaAcaraController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DosenController;
@@ -52,4 +53,9 @@ Route::resource('berita_acara', BeritaAcaraController::class);
 Route::get('/validasi/berita_acara/{id}', [BeritaAcaraController::class, 'showValidasi'])->name('berita_acara.validasi');
 Route::put('/validasi/berita_acara/{id}', [BeritaAcaraController::class, 'takenValidasi'])->name('berita_acara.validate');
 Route::get('/unduh/berita_acara/{id}', [BeritaAcaraController::class, 'download'])->name('berita_acara.download');
+
+// arsip
+
+Route::resource('arsip', ArsipController::class);
+
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');

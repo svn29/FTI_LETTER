@@ -14,9 +14,9 @@
         </div>
         <div class="card-body">
             <form action="{{ route('tanda.store') }}" method="POST">
-                <input type="hidden" name="dosen_id" value="{{ Auth::user()->id }}">
+                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 @csrf
-                @error('dosen_id')
+                @error('user_id')
                     <div class="form-group">
                         <div class="alert alert-danger">{{ $message }}</div>
                     </div>
