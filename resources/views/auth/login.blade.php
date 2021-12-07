@@ -25,8 +25,8 @@
 }
 </style>
 <body>
-    <div class="container">
-        <div class="card">
+    <div class="container mx-auto">
+        <div class="card mx-auto" style="width: 35rem">
             <div class="card-header" style="font-size:50px;">
                 <center>Login</center>
             </div>
@@ -42,7 +42,7 @@
                         <input type="password" name="password" class="form-control" id="">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success btn-block">Submit</button>
                     </div>
                 </form>
             </div>
