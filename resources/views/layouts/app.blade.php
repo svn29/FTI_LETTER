@@ -119,6 +119,12 @@ Coded by www.creative-tim.com
             </a>
           </li>
           @endif
+          <li>
+            <a href="{{ route('arsip.index') }}">
+              <i class="nc-icon nc-email-85"></i>
+              <p>Arsip Surat</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
