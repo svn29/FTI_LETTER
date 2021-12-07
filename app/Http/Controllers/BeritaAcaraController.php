@@ -123,7 +123,7 @@ class BeritaAcaraController extends Controller
             }
 
             Surat::find($id)->update([
-                'no_surat' => $kode.'/C/FTI/'. $year,
+                'no_surat' => $kode.'/E/FTI/'. $year,
                 'status' => $request->status,
                 'sign_id' => $request->sign_id
             ]);

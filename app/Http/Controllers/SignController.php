@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Sign;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SignController extends Controller
 {
@@ -19,9 +20,9 @@ class SignController extends Controller
      */
     public function index()
     {
-        $signs = Sign::all();
-
-        return view('tanda.index', compact('signs'));
+        $sign = Sign::where('user_id', Auth::user()->id)->first();
+        // dd($sign);
+        return view('tanda.index', compact('sign'));
     }
 
     /**

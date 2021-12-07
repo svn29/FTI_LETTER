@@ -9,8 +9,13 @@
         }
 </style>
     <div class="card">
-        <div class="card-header">
-            Buat Tanda Tangan
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span>
+                Buat Tanda Tangan
+            </span>
+            <span>
+                <a href="{{ route('tanda.index') }}" class="btn btn-danger">Kembali</a>
+            </span>
         </div>
         <div class="card-body">
             <form action="{{ route('tanda.store') }}" method="POST">

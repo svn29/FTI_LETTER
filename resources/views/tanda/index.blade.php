@@ -11,40 +11,27 @@
             </div>
         </div>
         <div class="card-body">
-            <table class="table">
-                <thead class="dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($signs as $item)
-                        <tr>
-                            <th>
-                                {{$loop->iteration}}
-                            </th>
-                            <td>
-                                {{$item->user->nama}}
-                            </td>
-                            <td>
-                                <form action="{{ route('tanda.destroy', $item->id) }}" method="POST">
-                                @csrf
-                                <button class="btn btn-danger">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                    <tr>
-                        <td>
-                            Belum Ada Data
-                        </td>
-                    </tr>
-                        
-                    @endforelse
-                </tbody>
-            </table>
+            @if ($sign == NULL)
+                <div class="form-group">
+                    <label for="">Kamu Belum Buat Tanda Tangan</label>
+                </div>
+            @else
+            <div class="form-group">
+                <label for="">Nama</label>
+                <input type="text" readonly value="{{ $sign->user->nama }}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Tanda Tangan</label>
+                <img src="{{ asset('upload/'.$sign->sign) }}" alt="">
+            </div>
+            <div class="form-group">
+                <form action="{{ route('tanda.destroy', $sign->id) }}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button class="btn btn-danger">Hapus Tanda Tangan</button>
+                </form>
+            </div>
+            @endif
         </div>
     </div>
 @endsection

@@ -6,6 +6,7 @@ use App\Models\Sign;
 use App\Models\Surat;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use PDF;
 
 class SuratTugasController extends Controller
@@ -21,7 +22,11 @@ class SuratTugasController extends Controller
      */
     public function index()
     {
-        $surats = Surat::where('jenis_surat', 'tugas pribadi')->get();
+        if (Auth::user()->role == 'mahasiswa') {
+            $surats = Surat::where('jenis_surat', 'tugas pribadi')->where('pemohon_id', Auth::user()->id)->get();
+        } else {
+            $surats = Surat::where('jenis_surat', 'tugas pribadi')->get();
+        }
 
         return view('tugas_pribadi.index', compact('surats'));
     }
@@ -123,7 +128,7 @@ class SuratTugasController extends Controller
             }
 
             Surat::find($id)->update([
-                'no_surat' => $kode.'/C/FTI/'. $year,
+                'no_surat' => $kode.'/A/FTI/'. $year,
                 'status' => $request->status,
                 'sign_id' => $request->sign_id
             ]);

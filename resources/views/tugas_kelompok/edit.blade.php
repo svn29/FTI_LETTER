@@ -2,8 +2,13 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header">
-            Edit Surat Kelompok
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span>
+                Edit Surat Kelompok
+            </span>
+            <span>
+                <a href="{{ route('tugas_kelompok.index') }}" class="btn btn-danger">Kembali</a>
+            </span>
         </div>
         <div class="card-body">
             <form action="{{ route('tugas_kelompok.update', $surat->id) }}" method="POST">

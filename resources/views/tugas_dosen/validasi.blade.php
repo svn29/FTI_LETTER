@@ -2,8 +2,13 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header">
-            Validasi
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span>
+                Validasi Surat Dosen
+            </span>
+            <span>
+                <a href="{{ route('surat_dosen.index') }}" class="btn btn-danger">Kembali</a>
+            </span>
         </div>
         <div class="card-body">
             <form action="{{ route('tugas_dosen.validate', $surat->id) }}" method="POST">
