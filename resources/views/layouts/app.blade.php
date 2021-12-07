@@ -91,42 +91,34 @@ Coded by www.creative-tim.com
             </a>
           </li>
           @endif
-          <li class="menu-item-has-children dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon nc-icon nc-email-85"></i>Surat</a>
-            <ul class="sub-menu children dropdown-menu p-3">
-              @if (Auth::user()->role != 'dosen')
-              <li>
-                <a href="{{ route('tugas_pribadi.index') }}">
-                  <p>Surat Tugas Pribadi</p>
-                </a>
-              </li>
-              <li>
-                <a href="{{ route('tugas_kelompok.index') }}">
-                  <p>Surat Tugas Kelompok</p>
-                </a>
-              </li>
-              @endif
-              @if (Auth::user()->role != 'mahasiswa')
-              <li>
-                <a href="{{ route('tugas_dosen.index') }}">
-                  <p>Surat Tugas Dosen</p>
-                </a>
-              </li>
-              <li>
-                <a href="{{ route('berita_acara.index') }}">
-                  <p>Berita Acara</p>
-                </a>
-              </li>
-              @endif
-              @if (Auth::user()->role == 'admin')
-              <li>
-                <a href="{{ route('arsip.index') }}">
-                  <p>Arsip Surat</p>
-                </a>
-              </li>
-              @endif
-            </ul>
-        </li>
+          @if (Auth::user()->role != 'dosen')
+          <li>
+            <a href="{{ route('tugas_pribadi.index') }}">
+              <i class="nc-icon nc-email-85"></i>
+              <p>Surat Tugas Pribadi</p>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('tugas_kelompok.index') }}">
+              <i class="nc-icon nc-email-85"></i>
+              <p>Surat Tugas Kelompok</p>
+            </a>
+          </li>
+          @endif
+          @if (Auth::user()->role != 'mahasiswa')
+          <li>
+            <a href="{{ route('tugas_dosen.index') }}">
+              <i class="nc-icon nc-email-85"></i>
+              <p>Surat Tugas Dosen</p>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('berita_acara.index') }}">
+              <i class="nc-icon nc-email-85"></i>
+              <p>Berita Acara</p>
+            </a>
+          </li>
+          @endif
         </ul>
       </div>
     </div>
@@ -142,7 +134,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <img src="{{ asset('ukdw.png') }}" style="width:90px; height:50px">
+            <img src="{{ asset('ukdw.png') }}" style="width:90px; height:60px">
             <a class="navbar-brand" href="javascript:;">Sistem Surat Menyurat FTI UKDW</a>
             <img src="{{ asset('logo fti.png') }}" style="width:90px; height:50px">
           </div>

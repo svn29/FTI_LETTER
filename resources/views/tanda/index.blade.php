@@ -4,7 +4,8 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between">
             <span>
-                Signature
+                <b>Tanda Tangan</b></br>
+                (Hanya boleh dilakukan oleh dosen pejabat)
             </span>
             <div>
                 <a href="{{ route('tanda.create') }}" class="btn btn-primary">+ Buat Tanda Tangan</a>
