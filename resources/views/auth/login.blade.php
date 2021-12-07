@@ -33,6 +33,11 @@
             <div class="card-body">
                 <form action="{{ route('masuk') }}" method="POST">
                     @csrf
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            {{$message}}
+                        </div>
+                    @endif
                     <div class="form-group">
                         <label for="">ID</label>
                         <input type="number" name="no_induk" class="form-control" id="">
@@ -45,6 +50,9 @@
                         <button type="submit" class="btn btn-success btn-block">Submit</button>
                     </div>
                 </form>
+            </div>
+            <div class="card-footer">
+                Belum Buat Akun? <a href="{{ route('register') }}">Daftar</a>
             </div>
         </div>
     </div>
