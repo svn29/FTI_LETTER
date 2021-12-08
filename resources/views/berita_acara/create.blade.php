@@ -2,8 +2,13 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header">
-            Ajukan Berita Acara
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span>
+                Ajukan Berita Acara
+            </span>
+            <span>
+                <a href="{{ route('berita_acara.index') }}" class="btn btn-danger">Kembali</a>
+            </span>
         </div>
         <div class="card-body">
             <form action="{{ route('berita_acara.store') }}" method="POST">

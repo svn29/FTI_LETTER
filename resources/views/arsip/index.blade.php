@@ -12,7 +12,7 @@
                         Surat Tugas Pribadi
                     </span>
                     <div>
-                        <a href="{{ route('tugas_pribadi.create') }}" class="btn btn-primary">+ Ajukan</a>
+                        {{-- <a href="{{ route('tugas_pribadi.create') }}" class="btn btn-primary">+ Ajukan</a> --}}
                     </div>
                 </div>
                 <div class="card-body">
@@ -88,7 +88,7 @@
                         Surat Tugas Kelompok
                     </span>
                     <div>
-                        <a href="{{ route('tugas_kelompok.create') }}" class="btn btn-primary">+ Ajukan</a>
+                        {{-- <a href="{{ route('tugas_kelompok.create') }}" class="btn btn-primary">+ Ajukan</a> --}}
                     </div>
                 </div>
                 <div class="card-body">
@@ -172,7 +172,7 @@
                         Berita Acara
                     </span>
                     <div>
-                        <a href="{{ route('berita_acara.create') }}" class="btn btn-primary">+ Ajukan</a>
+                        {{-- <a href="{{ route('berita_acara.create') }}" class="btn btn-primary">+ Ajukan</a> --}}
                     </div>
                 </div>
                 <div class="card-body">
@@ -244,7 +244,7 @@
                         Surat Tugas Dosen
                     </span>
                     <div>
-                        <a href="{{ route('tugas_dosen.create') }}" class="btn btn-primary">+ Ajukan</a>
+                        {{-- <a href="{{ route('tugas_dosen.create') }}" class="btn btn-primary">+ Ajukan</a> --}}
                     </div>
                 </div>
                 <div class="card-body">
