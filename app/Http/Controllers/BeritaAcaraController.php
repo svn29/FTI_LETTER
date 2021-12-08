@@ -18,9 +18,9 @@ class BeritaAcaraController extends Controller
     public function index()
     {
         if (Auth::user()->role == 'dosen') {
-            $surats = Surat::where('jenis_surat', 'berita acara')->where('pemohon_id', Auth::user()->id)->get();
+            $surats = Surat::where('jenis_surat', 'berita acara')->where('pemohon_id', Auth::user()->id)->paginate(5);
         } else {
-            $surats = Surat::where('jenis_surat', 'berita acara')->get();
+            $surats = Surat::where('jenis_surat', 'berita acara')->paginate(5);
         }
 
         return view('berita_acara.index', compact('surats'));

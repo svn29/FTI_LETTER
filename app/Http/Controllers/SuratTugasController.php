@@ -23,9 +23,9 @@ class SuratTugasController extends Controller
     public function index()
     {
         if (Auth::user()->role == 'mahasiswa') {
-            $surats = Surat::where('jenis_surat', 'tugas pribadi')->where('pemohon_id', Auth::user()->id)->get();
+            $surats = Surat::where('jenis_surat', 'tugas pribadi')->where('pemohon_id', Auth::user()->id)->paginate(5);
         } else {
-            $surats = Surat::where('jenis_surat', 'tugas pribadi')->get();
+            $surats = Surat::where('jenis_surat', 'tugas pribadi')->paginate(5);
         }
 
         return view('tugas_pribadi.index', compact('surats'));

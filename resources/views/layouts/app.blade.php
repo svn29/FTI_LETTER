@@ -87,14 +87,6 @@ Coded by www.creative-tim.com
           <li class="menu-item-has-children dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon nc-icon nc-email-85"></i>Surat</a>
             <ul class="sub-menu children dropdown-menu p-4">
-              @if (Auth::user()->role == 'dosen')
-              <li>
-                <a href="{{ route('tanda.index') }}">
-                  
-                  <p>Tanda Tangan</p>
-                </a>
-              </li>
-              @endif
               @if (Auth::user()->role != 'dosen')
               <li>
                 <a href="{{ route('tugas_pribadi.index') }}">
@@ -133,6 +125,14 @@ Coded by www.creative-tim.com
           </a>
         </li>
         @endif
+        @if (Auth::user()->role == 'dosen')
+              <li>
+                <a href="{{ route('tanda.index') }}">
+                  <i class="nc-icon nc-email-85"></i>
+                  <p>Tanda Tangan</p>
+                </a>
+              </li>
+              @endif
         </ul>
       </div>
     </div>

@@ -80,6 +80,13 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="card-footer clearfix">
+                    <ul class="pagination pagination-sm m-0 float-right">
+        
+                        {{ $pribadis    ->links('vendor.bootstrap-4') }}
+        
+                    </ul>
+                </div>
             </div>
 
             <div class="card mt-3">
@@ -164,6 +171,13 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="card-footer clearfix">
+                    <ul class="pagination pagination-sm m-0 float-right">
+        
+                        {{ $kelompoks    ->links('vendor.bootstrap-4') }}
+        
+                    </ul>
+                </div>
             </div>
 
             <div class="card mt-3">
@@ -235,6 +249,13 @@
                             @endforelse
                         </tbody>
                     </table>
+                </div>
+                <div class="card-footer clearfix">
+                    <ul class="pagination pagination-sm m-0 float-right">
+        
+                        {{ $acaras    ->links('vendor.bootstrap-4') }}
+        
+                    </ul>
                 </div>
             </div>
 
@@ -311,6 +332,13 @@
                             @endforelse
                         </tbody>
                     </table>
+                </div>
+                <div class="card-footer clearfix">
+                    <ul class="pagination pagination-sm m-0 float-right">
+        
+                        {{ $dosens    ->links('vendor.bootstrap-4') }}
+        
+                    </ul>
                 </div>
             </div>
         </div>

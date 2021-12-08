@@ -23,9 +23,9 @@ class TugasKelompokController extends Controller
     public function index()
     {
         if (Auth::user()->role == 'mahasiswa') {
-            $surats = Surat::where('jenis_surat', 'tugas kelompok')->where('pemohon_id', Auth::user()->id)->get();
+            $surats = Surat::where('jenis_surat', 'tugas kelompok')->where('pemohon_id', Auth::user()->id)->paginate(5);
         } else {
-            $surats = Surat::where('jenis_surat', 'tugas kelompok')->get();
+            $surats = Surat::where('jenis_surat', 'tugas kelompok')->paginate(5);
         }
 
         return view('tugas_kelompok.index', compact('surats'));

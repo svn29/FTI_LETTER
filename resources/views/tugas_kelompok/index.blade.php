@@ -83,5 +83,12 @@
                 </tbody>
             </table>
         </div>
+        <div class="card-footer clearfix">
+            <ul class="pagination pagination-sm m-0 float-right">
+
+                {{ $surats    ->links('vendor.bootstrap-4') }}
+
+            </ul>
+        </div>
     </div>
 @endsection

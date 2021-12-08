@@ -18,9 +18,9 @@ class TugasDosenController extends Controller
     public function index()
     {
         if (Auth::user()->role == 'dosen') {
-            $surats = Surat::where('jenis_surat', 'tugas dosen')->where('pemohon_id', Auth::user()->id)->get();
+            $surats = Surat::where('jenis_surat', 'tugas dosen')->where('pemohon_id', Auth::user()->id)->paginate(5);
         } else {
-            $surats = Surat::where('jenis_surat', 'tugas dosen')->get();
+            $surats = Surat::where('jenis_surat', 'tugas dosen')->paginate(5);
         }
 
         return view('tugas_dosen.index', compact('surats'));

@@ -14,10 +14,10 @@ class ArsipController extends Controller
      */
     public function index()
     {
-        $pribadis = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas pribadi')->get();
-        $kelompoks = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas kelompok')->get();
-        $acaras = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'berita acara')->get();
-        $dosens = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas dosen')->get();
+        $pribadis = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas pribadi')->paginate(5);
+        $kelompoks = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas kelompok')->paginate(5);
+        $acaras = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'berita acara')->paginate(5);
+        $dosens = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas dosen')->paginate(5);
 
         return view('arsip.index', compact('pribadis', 'kelompoks', 'acaras', 'dosens'));
     }
