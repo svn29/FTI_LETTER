@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Surat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -17,7 +19,22 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        if (Auth::user()->role != 'admin') {
+            $pribadis = Surat::where('jenis_surat', 'tugas pribadi')->where('pemohon_id', Auth::user()->id)->get();
+            $kelompoks = Surat::where('jenis_surat', 'tugas kelompok')->where('pemohon_id', Auth::user()->id)->get();
+            $dosens = Surat::where('jenis_surat', 'tugas dosen')->where('pemohon_id', Auth::user()->id)->get();
+            $acaras = Surat::where('jenis_surat', 'berita acara')->where('pemohon_id', Auth::user()->id)->get();
+
+            return view('welcome', compact('pribadis', 'kelompoks', 'dosens', 'acaras'));
+        }else{
+            $pribadis = Surat::where('jenis_surat', 'tugas pribadi')->get();
+            $kelompoks = Surat::where('jenis_surat', 'tugas kelompok')->get();
+            $dosens = Surat::where('jenis_surat', 'tugas dosen')->get();
+            $acaras = Surat::where('jenis_surat', 'berita acara')->get();
+
+            return view('welcome', compact('pribadis', 'kelompoks', 'dosens', 'acaras'));
+        }
+        // return view('welcome');
     }
 
     /**

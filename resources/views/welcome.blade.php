@@ -16,7 +16,7 @@
             <div class="col-7 col-md-8">
               <div class="numbers">
                 <p class="card-category">Tugas Pribadi</p>
-                <p class="card-title">{{ count(App\Models\Surat::where('jenis_surat', 'tugas pribadi')->get()) }}<p>
+                <p class="card-title">{{ count($pribadis) }}<p>
               </div>
             </div>
           </div>
@@ -42,7 +42,7 @@
             <div class="col-7 col-md-8">
               <div class="numbers">
                 <p class="card-category">Tugas Kelompok</p>
-                <p class="card-title">{{ count(App\Models\Surat::where('jenis_surat', 'tugas kelompok')->get()) }}<p>
+                <p class="card-title">{{ count($kelompoks) }}<p>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@
             <div class="col-7 col-md-8">
               <div class="numbers">
                 <p class="card-category">Tugas Dosen</p>
-                <p class="card-title">{{ count(App\Models\Surat::where('jenis_surat', 'tugas dosen')->get()) }}<p>
+                <p class="card-title">{{ count($dosens) }}<p>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@
             <div class="col-7 col-md-8">
               <div class="numbers">
                 <p class="card-category">Berita Acara</p>
-                <p class="card-title">{{ count(App\Models\Surat::where('jenis_surat', 'berita acara')->get()) }}<p>
+                <p class="card-title">{{ count($acaras) }}<p>
               </div>
             </div>
           </div>
