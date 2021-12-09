@@ -182,7 +182,7 @@
             </div>
             @endif
 
-            @if(Auth::user()->role == 'admin')
+            @if(Auth::user()->role == 'admin' || Auth::user()->role == 'dosen')
             <div class="card mt-3">
                 <div class="card-header d-flex justify-content-between">
                     <span>
@@ -344,7 +344,9 @@
                     </ul>
                 </div>
             </div>
+            @endif
 
+            @if(Auth::user()->role == 'admin')
             <div class="card mt-3">
                 <div class="card-header d-flex justify-content-between">
                     <span>

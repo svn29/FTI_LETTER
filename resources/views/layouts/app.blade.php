@@ -84,14 +84,12 @@ Coded by www.creative-tim.com
             </a>
           </li>
           @endif
-        @if (Auth::user()->role != 'dosen')
         <li>
           <a href="{{ route('arsip.index') }}">
             <i class="nc-icon nc-email-85"></i>
             <p>Arsip</p>
           </a>
         </li>
-        @endif
         @if (Auth::user()->role == 'dosen')
               <li>
                 <a href="{{ route('tanda.index') }}">
