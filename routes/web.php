@@ -10,6 +10,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SignController;
+use App\Http\Controllers\SuratDaftarHadirController;
 use App\Http\Controllers\SuratTugasController;
 use App\Http\Controllers\TugasDosenController;
 use App\Http\Controllers\TugasKelompokController;
@@ -61,4 +62,8 @@ Route::get('/unduh/berita_acara/{id}', [BeritaAcaraController::class, 'download'
 
 Route::resource('arsip', ArsipController::class);
 
+// surat daftar hadir
+Route::resource('surat_daftar_hadir', SuratDaftarHadirController::class);
+Route::post('/surat_daftar_hadir/absen', [SuratDaftarHadirController::class, 'absen'])->name('surat_daftar_hadir.absen');
+Route::get('/surat_daftar_hadir/unduh/{id}', [SuratDaftarHadirController::class, 'unduh'])->name('surat_daftar_hadir.unduh');
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');

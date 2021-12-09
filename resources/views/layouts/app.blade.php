@@ -87,6 +87,12 @@ Coded by www.creative-tim.com
           <li class="menu-item-has-children dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon nc-icon nc-email-85"></i>Surat</a>
             <ul class="sub-menu children dropdown-menu p-4">
+              <li>
+                <a href="{{ route('surat_daftar_hadir.index') }}">
+                  
+                  <p>Surat Daftar Hadir</p>
+                </a>
+              </li>
               @if (Auth::user()->role != 'dosen')
               <li>
                 <a href="{{ route('tugas_pribadi.index') }}">

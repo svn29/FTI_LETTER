@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Surat;
+use App\Models\SuratDaftarHadir;
 use Illuminate\Http\Request;
 
 class ArsipController extends Controller
@@ -18,8 +19,9 @@ class ArsipController extends Controller
         $kelompoks = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas kelompok')->paginate(5);
         $acaras = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'berita acara')->paginate(5);
         $dosens = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas dosen')->paginate(5);
+        $hadirs = SuratDaftarHadir::paginate(5);
 
-        return view('arsip.index', compact('pribadis', 'kelompoks', 'acaras', 'dosens'));
+        return view('arsip.index', compact('pribadis', 'kelompoks', 'acaras', 'dosens', 'hadirs'));
     }
 
     /**
