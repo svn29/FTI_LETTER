@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Surat;
 use App\Models\SuratDaftarHadir;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArsipController extends Controller
 {
@@ -15,13 +16,23 @@ class ArsipController extends Controller
      */
     public function index()
     {
-        $pribadis = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas pribadi')->paginate(5);
-        $kelompoks = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas kelompok')->paginate(5);
-        $acaras = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'berita acara')->paginate(5);
-        $dosens = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas dosen')->paginate(5);
-        $hadirs = SuratDaftarHadir::paginate(5);
+        if (Auth::user()->role == 'mahasiswa') {
+            $pribadis = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas pribadi')->where('pemohon_id', Auth::user()->id)->paginate(5);
+            $kelompoks = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas kelompok')->where('pemohon_id', Auth::user()->id)->paginate(5);
+            $acaras = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'berita acara')->where('pemohon_id', Auth::user()->id)->paginate(5);
+            $dosens = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas dosen')->where('pemohon_id', Auth::user()->id)->paginate(5);
+            $hadirs = SuratDaftarHadir::paginate(5);
 
-        return view('arsip.index', compact('pribadis', 'kelompoks', 'acaras', 'dosens', 'hadirs'));
+            return view('arsip.index', compact('pribadis', 'kelompoks', 'acaras', 'dosens', 'hadirs'));
+        }else{
+            $pribadis = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas pribadi')->paginate(5);
+            $kelompoks = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas kelompok')->paginate(5);
+            $acaras = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'berita acara')->paginate(5);
+            $dosens = Surat::where('no_surat', '!=' , NULL)->where('jenis_surat', 'tugas dosen')->paginate(5);
+            $hadirs = SuratDaftarHadir::paginate(5);
+    
+            return view('arsip.index', compact('pribadis', 'kelompoks', 'acaras', 'dosens', 'hadirs'));
+        }
     }
 
     /**
