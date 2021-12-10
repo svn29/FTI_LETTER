@@ -42,7 +42,13 @@
                                 {{$item->tanggal}}
                             </td>
                             <td>
-                                <span class="badge badge-info">{{$item->status}}</span>
+                                @if ($item->status == 'diterima')
+                                    <span class="badge badge-success">{{$item->status}}</span>
+                                @elseif($item->status == 'ditolak')
+                                    <span class="badge badge-danger">{{$item->status}}</span>
+                                @else
+                                    <span class="badge badge-info">{{$item->status}}</span>
+                                @endif
                             </td>
                             <td>
                                 @if ($item->status != 'diterima' && Auth::user()->role == 'dosen')

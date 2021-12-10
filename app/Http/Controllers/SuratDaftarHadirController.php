@@ -101,9 +101,8 @@ class SuratDaftarHadirController extends Controller
     public function show($id)
     {
         $surat = SuratDaftarHadir::find($id);
-        $absens = DaftarHadir::where('surat_daftar_hadir_id', $id)->get();
 
-        return view('surat_daftar_hadir.show', compact('surat', 'absens'));
+        return view('surat_daftar_hadir.show', compact('surat'));
     }
 
     /**

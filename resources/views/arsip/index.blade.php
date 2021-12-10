@@ -52,7 +52,7 @@
                                         {{$item->keterangan}}
                                     </td>
                                     <td>
-                                        <span class="badge badge-info">{{$item->status}}</span>
+                                        <span class="badge badge-success">{{$item->status}}</span>
                                     </td>
                                     <td>
                                         @if ($item->status != 'diterima' && Auth::user()->role == 'mahasiswa')
@@ -143,7 +143,7 @@
                                         {{$item->judul}}
                                     </td>
                                     <td>
-                                        <span class="badge badge-info">{{$item->status}}</span>
+                                        <span class="badge badge-success">{{$item->status}}</span>
                                     </td>
                                     <td>
                                         @if ($item->status != 'diterima' && Auth::user()->role == 'mahasiswa')
@@ -224,7 +224,7 @@
                                         {{$item->tanggal}}
                                     </td>
                                     <td>
-                                        <span class="badge badge-info">{{$item->status}}</span>
+                                        <span class="badge badge-success">{{$item->status}}</span>
                                     </td>
                                     <td>
                                         @if ($item->status != 'diterima' && Auth::user()->role == 'dosen')
@@ -307,7 +307,7 @@
                                         {{$item->alamat}}
                                     </td>
                                     <td>
-                                        <span class="badge badge-info">{{$item->status}}</span>
+                                        <span class="badge badge-success">{{$item->status}}</span>
                                     </td>
                                     <td class="d-flex">
                                         @if ($item->status != 'diterima' && Auth::user()->role == 'dosen')
@@ -388,7 +388,7 @@
                                         {{$item->pembicara}} 
                                     </td>
                                     <td>
-                                        <span class="badge badge-info">{{$item->status}}</span>
+                                        <span class="badge badge-success">{{$item->status}}</span>
                                     </td>
                                     <td class="d-flex">
                                         {{-- <a href="{{ route('surat_daftar_hadir.show', $item->id) }}" class="btn btn-warning">Detail</a>

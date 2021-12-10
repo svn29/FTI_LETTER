@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Surat;
+use App\Models\SuratDaftarHadir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,8 +32,9 @@ class DashboardController extends Controller
             $kelompoks = Surat::where('jenis_surat', 'tugas kelompok')->get();
             $dosens = Surat::where('jenis_surat', 'tugas dosen')->get();
             $acaras = Surat::where('jenis_surat', 'berita acara')->get();
+            $hadirs = SuratDaftarHadir::all();
 
-            return view('welcome', compact('pribadis', 'kelompoks', 'dosens', 'acaras'));
+            return view('welcome', compact('pribadis', 'kelompoks', 'dosens', 'acaras', 'hadirs'));
         }
         // return view('welcome');
     }

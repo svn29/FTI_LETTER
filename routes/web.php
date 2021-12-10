@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\BeritaAcaraController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\LoginController;
@@ -67,3 +68,4 @@ Route::resource('surat_daftar_hadir', SuratDaftarHadirController::class);
 Route::post('/surat_daftar_hadir/absen', [SuratDaftarHadirController::class, 'absen'])->name('surat_daftar_hadir.absen');
 Route::get('/surat_daftar_hadir/unduh/{id}', [SuratDaftarHadirController::class, 'unduh'])->name('surat_daftar_hadir.unduh');
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+Route::get('/chart', [ChartController::class, 'getData'])->name('chart');
