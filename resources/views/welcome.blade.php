@@ -183,10 +183,34 @@
         const myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Tugas Pribadi', 'Tugas Kelompok', 'Tugas Dosen', 'Berita Acara', 'Daftar Hadir'],
+                labels: [
+                  @if(Auth::user()->role != 'dosen')
+                  'Tugas Pribadi', 
+                  'Tugas Kelompok', 
+                  @endif
+                  @if(Auth::user()->role != 'mahasiswa')
+                  'Tugas Dosen', 
+                  'Berita Acara', 
+                  @endif
+                  @if(Auth::user()->role == 'admin')
+                  'Daftar Hadir'
+                  @endif
+                  ],
                 datasets: [{
                     label: 'Data Persentase Surat',
-                    data: [json.pribadis, json.kelompoks, json.dosens, json.acaras, json.hadirs],
+                    data: [
+                      @if(Auth::user()->role != 'dosen')
+                      json.pribadis, 
+                      json.kelompoks, 
+                      @endif
+                      @if(Auth::user()->role != 'mahasiswa')
+                      json.dosens, 
+                      json.acaras, 
+                      @endif
+                      @if(Auth::user()->role == 'admin')
+                      json.hadirs
+                      @endif
+                    ],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
