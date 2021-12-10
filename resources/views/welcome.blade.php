@@ -170,12 +170,12 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
   <script>
     const judul = document.querySelector('.judul');
-    // var data;
+    const date = new Date()
 
     async function getData(){
       judul.textContent = 'Loading..'
       try {
-        judul.textContent = 'Data Persentase User'
+        judul.textContent = 'Data Persentase Surat Tahun : ' + date.getFullYear()
         const res = await fetch("{{ route('chart') }}")
         const json = await res.json()
 
@@ -183,14 +183,16 @@
         const myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Admin', 'Mahasiswa', 'Dosen'],
+                labels: ['Tugas Pribadi', 'Tugas Kelompok', 'Tugas Dosen', 'Berita Acara', 'Daftar Hadir'],
                 datasets: [{
-                    label: 'Data Persentase User',
-                    data: [json.admin, json.mahasiswa, json.dosen],
+                    label: 'Data Persentase Surat',
+                    data: [json.pribadis, json.kelompoks, json.dosens, json.acaras, json.hadirs],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
                         'rgba(255, 206, 86, 0.2)',
+                        'rgba(40, 206, 86, 0.2)',
+                        'rgba(31, 206, 86, 0.2)',
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
